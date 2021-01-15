@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  web:
+    ports:
+        - "8000:80"
+  db:
+    ports:
+        - "5432:5432"
+    volumes:
+#        - /var/www/html/db/theater:/var/lib/mysql
+        - /Users/takashi/Database/theater_db:/var/lib/postgresql/data
+    environment:
+        POSTGRES_DB: theater_db
+        POSTGRES_USER: user_user
+        POSTGRES_PASSWORD: p@ssw0rd
